@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovie Tony Orumah - Personal Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #000000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            padding: 60px 0;
+        }
+
+        .category-card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.05);
+            opacity: 0.7;
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+        }
+
+        .category-overlay h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .category-overlay p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .about {
+            padding: 80px 0;
+            background: #000000;
+            color: #ffffff;
+            margin: 60px 0 0;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .blog-section {
+            padding: 80px 0;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 250px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .blog-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .blog-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            border: 1px solid #e0e0e0;
+            color: #666;
+        }
+
+        .subsection {
+            padding: 80px 0;
+        }
+
+        .subsection h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .subsection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .subsection-card {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .subsection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .subsection-card:hover img {
+            transform: scale(1.05);
+            opacity: 0.7;
+        }
+
+        .subsection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+        }
+
+        .subsection-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .subsection-overlay p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+
+        .quick-links {
+            padding: 60px 0;
+            text-align: center;
+            background: #f9f9f9;
+        }
+
+        .quick-links h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: opacity 0.3s;
+            font-weight: 300;
+        }
+
+        .social-links a:hover {
+            opacity: 0.5;
+        }
+
+        footer {
+            background: #000000;
+            padding: 40px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        footer p {
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .categories,
+            .subsection-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-card,
+            .subsection-card {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">OTO</div>
+            <ul class="nav-links">
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('blog')">Blog</a></li>
+                <li><a onclick="showSection('tech')">Tech</a></li>
+                <li><a onclick="showSection('art')">Art</a></li>
+                <li><a onclick="showSection('about')">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="home-section">
+            <section class="hero container">
+                <h1>Ovie Tony Orumah</h1>
+                <p class="tagline">Personal Blog. A Little Bit of Everything</p>
+            </section>
+
+            <section class="container">
+                <div class="categories">
+                    <div class="category-card" onclick="showSection('tech')">
+                        <img src="https://i.ibb.co/jMP67np/product.png" alt="Tech">
+                        <div class="category-overlay">
+                            <h2>Tech</h2>
+                            <p>Data. Product. Process.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" onclick="showSection('art')">
+                        <img src="https://i.ibb.co/ChbbqJS/prints.png" alt="Art">
+                        <div class="category-overlay">
+                            <h2>Art</h2>
+                            <p>Prints. Fashion. Books.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" onclick="showSection('blog')">
+                        <img src="https://i.ibb.co/9rGg1SC/process.png" alt="Blog">
+                        <div class="category-overlay">
+                            <h2>Blog</h2>
+                            <p>Stories. Ideas. Insights.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-links">
+                <div class="container">
+                    <h3>Quick Links</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank">Instagram</a>
+                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about">
+                <div class="container">
+                    <h2>About</h2>
+                    <p>Ovie has spent years refining his distinct perspective, approach, and taste across various fields. This is an ongoing journey of ever-evolving experiences and efforts, continuously shaping the work he does.</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="blog-section" class="hidden">
+            <section class="blog-section container">
+                <h2>Latest Blog Posts</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-card-image">📊</div>
+                        <div class="blog-card-content">
+                            <h3>Data-Driven Decision Making</h3>
+                            <div class="blog-meta">
+                                <span>Oct 3, 2025</span>
+                                <span>5 min read</span>
+                            </div>
+                            <p>Exploring how companies can leverage data analytics to make informed strategic decisions and drive business growth.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Data</span>
+                                <span class="tag">Analytics</span>
+                                <span class="tag">Business</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-card-image">🎨</div>
+                        <div class="blog-card-content">
+                            <h3>Art in Conversation</h3>
+                            <div class="blog-meta">
+                                <span>Sep 28, 2025</span>
+                                <span>4 min read</span>
+                            </div>
+                            <p>How conversations shape creative expression and inspire new forms of artistic interpretation.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Art</span>
+                                <span class="tag">Creativity</span>
+                                <span class="tag">Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-card-image">💻</div>
+                        <div class="blog-card-content">
+                            <h3>Building Better Products</h3>
+                            <div class="blog-meta">
+                                <span>Sep 15, 2025</span>
+                                <span>7 min read</span>
+                            </div>
+                            <p>Insights into product development processes that prioritize user experience and sustainable innovation.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Product</span>
+                                <span class="tag">UX</span>
+                                <span class="tag">Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-card-image">📚</div>
+                        <div class="blog-card-content">
+                            <h3>Books That Changed My Perspective</h3>
+                            <div class="blog-meta">
+                                <span>Sep 10, 2025</span>
+                                <span>5 min read</span>
+                            </div>
+                            <p>A curated list of books that have influenced my thinking and approach to work and life.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Books</span>
+                                <span class="tag">Reading</span>
+                                <span class="tag">Growth</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-card-image">⚙️</div>
+                        <div class="blog-card-content">
+                            <h3>Process Over Perfection</h3>
+                            <div class="blog-meta">
+                                <span>Aug 28, 2025</span>
+                                <span>6 min read</span>
+                            </div>
+                            <p>Why focusing on systematic processes leads to better outcomes than chasing perfection.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Process</span>
+                                <span class="tag">Productivity</span>
+                                <span class="tag">Mindset</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-card-image">🎯</div>
+                        <div class="blog-card-content">
+                            <h3>Finding Your Creative Voice</h3>
+                            <div class="blog-meta">
+                                <span>Aug 15, 2025</span>
+                                <span>4 min read</span>
+                            </div>
+                            <p>Reflections on developing a unique perspective in a world of constant creative output.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Creativity</span>
+                                <span class="tag">Personal</span>
+                                <span class="tag">Art</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="tech-section" class="hidden">
+            <section class="subsection container">
+                <h2>Technology</h2>
+                <div class="subsection-grid">
+                    <div class="subsection-card">
+                        <img src="https://i.ibb.co/ScqcRGw/data.png" alt="Data">
+                        <div class="subsection-overlay">
+                            <h3>Data</h3>
+                            <p>Helping companies make data-driven decisions to fuel growth and optimize processes.</p>
+                            <a href="https://linkedin.com" class="btn" target="_blank">View LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <div class="subsection-card">
+                        <img src="https://i.ibb.co/jMP67np/product.png" alt="Product">
+                        <div class="subsection-overlay">
+                            <h3>Products</h3>
+                            <p>Explore software products I have built and am currently building.</p>
+                            <button class="btn">View Projects</button>
+                        </div>
+                    </div>
+                    <div class="subsection-card">
+                        <img src="https://i.ibb.co/9rGg1SC/process.png" alt="Process">
+                        <div class="subsection-overlay">
+                            <h3>Process</h3>
+                            <p>Insights into processes that drive innovation and efficiency.</p>
+                            <button class="btn">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="art-section" class="hidden">
+            <section class="subsection container">
+                <h2>Art & Creativity</h2>
+                <div class="subsection-grid">
+                    <div class="subsection-card">
+                        <img src="https://i.ibb.co/ChbbqJS/prints.png" alt="Prints">
+                        <div class="subsection-overlay">
+                            <h3>Prints</h3>
+                            <p>Repurposed artwork inspired from conversations.</p>
+                            <button class="btn">View Prints</button>
+                        </div>
+                    </div>
+                    <div class="subsection-card">
+                        <img src="https://i.ibb.co/W3HdRZ5/fashion.png" alt="Fashion">
+                        <div class="subsection-overlay">
+                            <h3>Fashion</h3>
+                            <p>Not a brand, this is just us talking.</p>
+                            <button class="btn">Shop Fashion</button>
+                        </div>
+                    </div>
+                    <div class="subsection-card">
+                        <img src="https://i.ibb.co/bdTQmPy/books.png" alt="Books">
+                        <div class="subsection-overlay">
+                            <h3>Books</h3>
+                            <p>Books I have read and reading.</p>
+                            <button class="btn">Explore Books</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="about-section" class="hidden">
+            <section class="subsection container">
+                <h2>About Ovie Tony Orumah</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p style="font-size: 1.2rem; color: #666; margin-bottom: 30px; font-weight: 300; line-height: 1.8;">
+                        Ovie has spent years refining his distinct perspective, approach, and taste across various fields. This is an ongoing journey of ever-evolving experiences and efforts, continuously shaping the work he does.
+                    </p>
+                    <p style="font-size: 1.1rem; color: #666; margin-bottom: 40px; font-weight: 300; line-height: 1.8;">
+                        From data analytics and product development to art, fashion, and books, this space represents a confluence of diverse interests and professional expertise. Each area reflects a commitment to excellence, continuous learning, and meaningful contribution.
+                    </p>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <button class="btn" style="background: #000; color: #fff; border: 1px solid #000;" onclick="showSection('blog')">Read My Blog</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ovie Tony Orumah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            const sections = ['home', 'blog', 'tech', 'art', 'about'];
+            sections.forEach(s => {
+                const el = document.getElementById(s + '-section');
+                if (el) {
+                    el.classList.add('hidden');
+                }
+            });
+            
+            const targetSection = document.getElementById(section + '-section');
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
