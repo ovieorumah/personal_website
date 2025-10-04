@@ -357,6 +357,64 @@
             display: none;
         }
 
+        .blog-post-full {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .blog-post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .blog-post-content h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin: 40px 0 20px;
+            color: #000;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .blog-post-content ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .back-btn {
+            background: none;
+            border: 1px solid #e0e0e0;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            color: #000;
+        }
+
+        .back-btn:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -455,109 +513,13 @@
             <section class="blog-section container">
                 <h2>Latest Blog Posts</h2>
                 <div class="blog-grid">
-                    <div class="blog-card">
-                        <div class="blog-card-image">📊</div>
-                        <div class="blog-card-content">
-                            <h3>Data-Driven Decision Making</h3>
-                            <div class="blog-meta">
-                                <span>Oct 3, 2025</span>
-                                <span>5 min read</span>
-                            </div>
-                            <p>Exploring how companies can leverage data analytics to make informed strategic decisions and drive business growth.</p>
-                            <div class="blog-tags">
-                                <span class="tag">Data</span>
-                                <span class="tag">Analytics</span>
-                                <span class="tag">Business</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-card-image">🎨</div>
-                        <div class="blog-card-content">
-                            <h3>Art in Conversation</h3>
-                            <div class="blog-meta">
-                                <span>Sep 28, 2025</span>
-                                <span>4 min read</span>
-                            </div>
-                            <p>How conversations shape creative expression and inspire new forms of artistic interpretation.</p>
-                            <div class="blog-tags">
-                                <span class="tag">Art</span>
-                                <span class="tag">Creativity</span>
-                                <span class="tag">Design</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-card-image">💻</div>
-                        <div class="blog-card-content">
-                            <h3>Building Better Products</h3>
-                            <div class="blog-meta">
-                                <span>Sep 15, 2025</span>
-                                <span>7 min read</span>
-                            </div>
-                            <p>Insights into product development processes that prioritize user experience and sustainable innovation.</p>
-                            <div class="blog-tags">
-                                <span class="tag">Product</span>
-                                <span class="tag">UX</span>
-                                <span class="tag">Development</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-card-image">📚</div>
-                        <div class="blog-card-content">
-                            <h3>Books That Changed My Perspective</h3>
-                            <div class="blog-meta">
-                                <span>Sep 10, 2025</span>
-                                <span>5 min read</span>
-                            </div>
-                            <p>A curated list of books that have influenced my thinking and approach to work and life.</p>
-                            <div class="blog-tags">
-                                <span class="tag">Books</span>
-                                <span class="tag">Reading</span>
-                                <span class="tag">Growth</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-card-image">⚙️</div>
-                        <div class="blog-card-content">
-                            <h3>Process Over Perfection</h3>
-                            <div class="blog-meta">
-                                <span>Aug 28, 2025</span>
-                                <span>6 min read</span>
-                            </div>
-                            <p>Why focusing on systematic processes leads to better outcomes than chasing perfection.</p>
-                            <div class="blog-tags">
-                                <span class="tag">Process</span>
-                                <span class="tag">Productivity</span>
-                                <span class="tag">Mindset</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-card-image">🎯</div>
-                        <div class="blog-card-content">
-                            <h3>Finding Your Creative Voice</h3>
-                            <div class="blog-meta">
-                                <span>Aug 15, 2025</span>
-                                <span>4 min read</span>
-                            </div>
-                            <p>Reflections on developing a unique perspective in a world of constant creative output.</p>
-                            <div class="blog-tags">
-                                <span class="tag">Creativity</span>
-                                <span class="tag">Personal</span>
-                                <span class="tag">Art</span>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Blog posts will be dynamically loaded here -->
                 </div>
             </section>
+        </div>
+
+        <div id="blog-post-section" class="hidden">
+            <!-- Individual blog post will be loaded here -->
         </div>
 
         <div id="tech-section" class="hidden">
@@ -649,8 +611,75 @@
     </footer>
 
     <script>
+        // Blog posts data - Add your blog posts here
+        const blogPosts = [
+            {
+                title: "When Memories Become Manufactured: The Quiet Danger of AI-Generated Photos",
+                date: "Oct 4, 2025",
+                readTime: "8 min read",
+                excerpt: "Photos used to mean something simple. They were proof: I was here. I wore this. I smiled like this. This moment happened. But in a world of filters and AI image generation, that meaning is slipping away.",
+                tags: ["Technology", "AI", "Society", "Photography"],
+                icon: "📸",
+                content: `
+                    <h2>From Filters to Fabrications</h2>
+                    <p>It started small. Snapchat and Instagram taught us to love polished, softened versions of ourselves. Skin smoothed, eyes brightened, jawlines sharpened. Soon, many people struggled to recognize their own unfiltered faces.</p>
+                    <p>AI image generation pushes this even further. You can create a picture of yourself in a dress you never wore, in a pose you never struck, standing in a place you've never been. And people will keep it — not as a memory, but as a photo.</p>
+                    <p>But a photo of what? Not a lived moment. Just ones and zeroes stitched into the shape of a self that never existed.</p>
+                    
+                    <h2>The New Baseline</h2>
+                    <p>The danger isn't just vanity. It's what happens when we get used to these synthetic versions. Real life — with blemishes, wrinkles, awkward smiles, bad lighting — starts to feel wrong.</p>
+                    <p>Our baseline of "normal" shifts. We compare real bodies, real faces, and real lives against manufactured perfection. And reality almost always loses.</p>
+                    
+                    <h2>Memories or Imagination</h2>
+                    <p>The most haunting example I've seen recently: a mother took a photo of her son. He didn't smile in it. Instead of keeping the photo as it was — a snapshot of that real moment — she used AI to adjust his expression into a smile.</p>
+                    <p>That's not just touching up an image. That's altering a child's history. Years from now, when the family looks back, the memory they revisit will be false. The son didn't smile that day — You conjured a picture of what you rather imagine him doing, while he is right there in front of you.</p>
+                    <p>This isn't just about aesthetics anymore. It's about whether we're willing to replace reality with a curated fantasy, even in the most personal parts of our lives: our family albums.</p>
+                    
+                    <h2>From Documentation to Projection</h2>
+                    <p>We're living through a cultural shift:</p>
+                    <ul>
+                        <li><strong>Then:</strong> Photos were documentation. Proof of presence. Evidence of living.</li>
+                        <li><strong>Now:</strong> Photos are projection. A canvas for how we want to be remembered, how we want others to see us, even how we want to see ourselves.</li>
+                    </ul>
+                    <p>That shift might feel harmless in the moment — what's wrong with making a picture look better? But when every photo becomes editable, every memory becomes negotiable. The line between what happened and what we wished had happened grows thinner until it vanishes.</p>
+                    
+                    <h2>What Are We Really Keeping?</h2>
+                    <p>When someone saves an AI-generated image of themselves, what are they keeping?</p>
+                    <ul>
+                        <li>A reminder of how they wish they looked.</li>
+                        <li>A fantasy of how they want to be seen.</li>
+                        <li>A digital artifact detached from any lived experience.</li>
+                    </ul>
+                    <p>But not a memory. Not a moment. Not the truth.</p>
+                    <p>And maybe that's the most alarming part: we're getting comfortable replacing truth with something prettier, smoother, more convenient. We call it a photo, but it's not. It's a mirage.</p>
+                    
+                    <p style="margin-top: 40px; font-style: italic;">If memories are the threads that stitch together our lives, then photos are the knots that hold them tight. But if those photos are fabricated — smiles that never happened, days that never existed — what kind of fabric are we weaving?</p>
+                `
+            },
+            {
+                title: "Data-Driven Decision Making",
+                date: "Oct 3, 2025",
+                readTime: "5 min read",
+                excerpt: "Exploring how companies can leverage data analytics to make informed strategic decisions and drive business growth.",
+                tags: ["Data", "Analytics", "Business"],
+                icon: "📊",
+                content: `<p>Full blog content coming soon...</p>`
+            },
+            {
+                title: "Art in Conversation",
+                date: "Sep 28, 2025",
+                readTime: "4 min read",
+                excerpt: "How conversations shape creative expression and inspire new forms of artistic interpretation.",
+                tags: ["Art", "Creativity", "Design"],
+                icon: "🎨",
+                content: `<p>Full blog content coming soon...</p>`
+            }
+        ];
+
+        let currentBlogIndex = null;
+
         function showSection(section) {
-            const sections = ['home', 'blog', 'tech', 'art', 'about'];
+            const sections = ['home', 'blog', 'tech', 'art', 'about', 'blog-post'];
             sections.forEach(s => {
                 const el = document.getElementById(s + '-section');
                 if (el) {
@@ -663,8 +692,64 @@
                 targetSection.classList.remove('hidden');
             }
             
+            if (section === 'blog') {
+                renderBlogList();
+            }
+            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        function renderBlogList() {
+            const blogGrid = document.querySelector('.blog-grid');
+            blogGrid.innerHTML = blogPosts.map((post, index) => `
+                <div class="blog-card" onclick="showBlogPost(${index})">
+                    <div class="blog-card-image">${post.icon}</div>
+                    <div class="blog-card-content">
+                        <h3>${post.title}</h3>
+                        <div class="blog-meta">
+                            <span>${post.date}</span>
+                            <span>${post.readTime}</span>
+                        </div>
+                        <p>${post.excerpt}</p>
+                        <div class="blog-tags">
+                            ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showBlogPost(index) {
+            currentBlogIndex = index;
+            const post = blogPosts[index];
+            const blogPostSection = document.getElementById('blog-post-section');
+            
+            blogPostSection.innerHTML = `
+                <article class="blog-post-full container">
+                    <div class="blog-post-header">
+                        <button class="back-btn" onclick="showSection('blog')">← Back to Blog</button>
+                        <h1>${post.title}</h1>
+                        <div class="blog-meta" style="justify-content: center; margin: 20px 0;">
+                            <span>${post.date}</span>
+                            <span>${post.readTime}</span>
+                        </div>
+                        <div class="blog-tags" style="justify-content: center; margin-bottom: 40px;">
+                            ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="blog-post-content">
+                        ${post.content}
+                    </div>
+                </article>
+            `;
+            
+            showSection('blog-post');
+        }
+
+        // Initialize blog on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBlogList();
+        });
     </script>
 </body>
 </html>
