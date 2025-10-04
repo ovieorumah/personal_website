@@ -1,0 +1,31 @@
+# Site settings
+title: Ovie Tony Orumah
+description: Personal Blog. A Little Bit of Everything
+url: "https://ovieorumah.github.io"
+baseurl: ""
+
+# Author
+author:
+  name: Ovie Tony Orumah
+  email: ovieorumah@gmail.com
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
