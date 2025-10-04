@@ -2,7 +2,7 @@
 title: Ovie Tony Orumah
 description: Personal Blog. A Little Bit of Everything
 url: "https://ovieorumah.github.io"
-baseurl: ""
+baseurl: "/personal_website"
 
 # Author
 author:

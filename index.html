@@ -9,7 +9,7 @@ layout: default
 
 <section class="container">
     <div class="categories">
-        <div class="category-card" onclick="window.location.href='/tech'">
+        <div class="category-card" onclick="window.location.href='{{ '/tech' | relative_url }}'">
             <img src="https://i.ibb.co/jMP67np/product.png" alt="Tech">
             <div class="category-overlay">
                 <h2>Tech</h2>
@@ -17,7 +17,7 @@ layout: default
             </div>
         </div>
 
-        <div class="category-card" onclick="window.location.href='/art'">
+        <div class="category-card" onclick="window.location.href='{{ '/art' | relative_url }}'">
             <img src="https://i.ibb.co/ChbbqJS/prints.png" alt="Art">
             <div class="category-overlay">
                 <h2>Art</h2>
@@ -25,7 +25,7 @@ layout: default
             </div>
         </div>
 
-        <div class="category-card" onclick="window.location.href='/blog'">
+        <div class="category-card" onclick="window.location.href='{{ '/blog' | relative_url }}'">
             <img src="https://i.ibb.co/9rGg1SC/process.png" alt="Blog">
             <div class="category-overlay">
                 <h2>Blog</h2>
