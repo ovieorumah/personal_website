@@ -7,7 +7,7 @@ export default function Home() {
       {/* HERO */}
       <section className="w-full border-b border-black py-32 px-6 flex flex-col justify-center items-center text-center bg-gray-50">
         <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-6">
-          Ovie Orumah
+          Ovie Tony Orumah
         </h1>
         <p className="text-xl md:text-3xl font-medium max-w-4xl uppercase tracking-tight mb-12">
           Build a cost-effective Business Intelligence foundation that turns your data into insights that impact your bottom line.
@@ -22,10 +22,10 @@ export default function Home() {
         <div className="p-12 md:p-24 border-b md:border-b-0 md:border-r border-black flex flex-col justify-center bg-white">
           <h2 className="text-sm font-bold uppercase tracking-widest mb-4">About</h2>
           <p className="text-xl md:text-3xl font-medium leading-tight mb-6">
-             I help companies build the foundations they need to make better decisions with their data. I design and implement the data models, reporting systems, and analytics workflows that turn raw business data into reliable, actionable intelligence — without the cost and complexity of building a large BI team from day one.
+             Helping companies build the foundations they need to make better decisions with their data. Design and implement the data models, reporting systems, and product analytics workflows that turn raw business data into reliable, actionable intelligence. Integrate AI-enabled BI to deliver these advanced capabilities without the cost and complexity of building a large BI team from day one.
           </p>
           <p className="text-xl md:text-3xl font-medium leading-tight">
-             The goal isn't to create dashboards and leave. It's to build a system your internal team can understand, maintain, and expand long-term.
+             The goal isn't to create dashboards and leave. It's to build an intelligent, scalable system your internal team can understand, maintain, and expand long-term.
           </p>
         </div>
         <div className="p-12 md:p-24 flex flex-col justify-center bg-black text-white">
@@ -87,24 +87,42 @@ export default function Home() {
           <div className="p-12 group hover:bg-red-500 hover:text-white transition-colors">
             <h3 className="text-2xl font-bold uppercase mb-4 group-hover:underline">Cost-Effective Infrastructure</h3>
             <p className="text-lg font-medium leading-snug">
-              Use open-source BI tools like Metabase to avoid expensive per-seat licensing. Build a capable analytics stack without committing to the cost of traditional enterprise BI platforms.
+              Use open-source BI tools like Metabase to avoid expensive per-seat licensing. Build a capable stack that supports everything from core reporting to product analytics and AI-enabled insights, without the bloated costs of traditional enterprise platforms.
             </p>
           </div>
 
           <div className="p-12 group hover:bg-blue-600 hover:text-white transition-colors">
             <h3 className="text-2xl font-bold uppercase mb-4 group-hover:underline">Senior Expertise at Setup</h3>
             <p className="text-lg font-medium leading-snug">
-              Bring in senior BI expertise when it matters most: the foundation. I build the data models, security, reporting architecture, and core dashboards needed to create a reliable, scalable BI system.
+              Bring in senior BI expertise when it matters most: the foundation. Build the data models, security, reporting architecture, and core dashboards needed to create a reliable, scalable BI system.
             </p>
           </div>
 
           <div className="p-12 group hover:bg-yellow-400 hover:text-black transition-colors">
             <h3 className="text-2xl font-bold uppercase mb-4 group-hover:underline">Built for Your Internal Team</h3>
             <p className="text-lg font-medium leading-snug">
-              The goal isn't to make you dependent on me. I provide the documentation, training, and structure your internal analysts need to operate the system confidently, build new reports, and deliver day-to-day insights without requiring a full-time senior BI architect.
+              The goal isn't to create dependency. Equip your internal analysts with the documentation, training, and structure they need to operate the system confidently, build new reports, and deliver day-to-day insights without requiring a full-time senior BI architect.
             </p>
           </div>
           
+        </div>
+      </section>
+
+      {/* ADVANCED CAPABILITIES */}
+      <section className="w-full border-b border-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white bg-black text-white">
+          <div className="p-12 md:p-24 flex flex-col justify-center">
+            <h3 className="text-3xl font-bold uppercase mb-6 tracking-tighter">Product Analytics</h3>
+            <p className="text-xl font-medium leading-relaxed">
+              Move beyond basic reporting. Implement deep event tracking and product analytics to seamlessly understand user behavior, visualize retention funnels, and drive feature adoption to grow your product.
+            </p>
+          </div>
+          <div className="p-12 md:p-24 flex flex-col justify-center bg-gray-900">
+            <h3 className="text-3xl font-bold uppercase mb-6 tracking-tighter">AI-Enabled BI</h3>
+            <p className="text-xl font-medium leading-relaxed">
+              Future-proof your data infrastructure. Integrate AI capabilities into your BI workflows, enabling your team to query data using natural language, automate insights, and scale analysis instantly.
+            </p>
+          </div>
         </div>
       </section>
 
