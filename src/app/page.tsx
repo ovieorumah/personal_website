@@ -138,8 +138,8 @@ export default function Home() {
               "Ovie completely transformed how we approach our data. The infrastructure is rock-solid and our team finally feels empowered to pull their own insights."
             </p>
             <div>
-              <p className="text-sm font-bold uppercase tracking-widest">Jane Doe</p>
-              <p className="text-xs uppercase tracking-widest text-gray-500">VP of Data, SaaS Corp</p>
+              <p className="text-sm font-bold uppercase tracking-widest">Lawrence Odunlami</p>
+              <p className="text-xs uppercase tracking-widest text-gray-500">Zonal Manager, PalmPay</p>
             </div>
           </div>
 
@@ -148,8 +148,8 @@ export default function Home() {
               "Bringing him in at the setup stage saved us months of headaches. We now have a scalable foundation without the massive overhead of a full enterprise BI tool."
             </p>
             <div>
-              <p className="text-sm font-bold uppercase tracking-widest">John Smith</p>
-              <p className="text-xs uppercase tracking-widest text-gray-500">CEO, HealthTech Inc</p>
+              <p className="text-sm font-bold uppercase tracking-widest">Oludemi Dennis</p>
+              <p className="text-xs uppercase tracking-widest text-gray-500">BI Analyst, PalmPay</p>
             </div>
           </div>
 
